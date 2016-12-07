@@ -114,7 +114,7 @@ class ArrayHelper extends \yii\helpers\ArrayHelper
      */
     public static function format_tree($tree, $title = 'title', $level = 0)
     {
-        static $list;
+        static $list =array();
         /* 按层级格式的字符串 */
         $tmp_str=str_repeat("　",$level)."└";
         $level == 0 && $tmp_str = '';

@@ -39,17 +39,6 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*'metronic' => [
-            'class' => 'dlds\metronic\Metronic',
-            'resources'=>'@backend/web/metronic/assets/theme/assets',
-            'style'=>\dlds\metronic\Metronic::STYLE_MATERIAL,
-            'theme'=>\dlds\metronic\Metronic::THEME_LIGHT,
-            'layoutOption'=>\dlds\metronic\Metronic::LAYOUT_FLUID,
-            'headerOption'=>\dlds\metronic\Metronic::HEADER_FIXED,
-            'sidebarPosition'=>\dlds\metronic\Metronic::SIDEBAR_POSITION_LEFT,
-            'sidebarOption'=>\dlds\metronic\Metronic::SIDEBAR_MENU_ACCORDION,
-            'footerOption'=>\dlds\metronic\Metronic::FOOTER_FIXED,
-        ],*/
         /*
         'urlManager' => [
             'enablePrettyUrl' => true,
@@ -58,6 +47,20 @@ return [
             ],
         ],
         */
+        'assetManager' => [
+            'bundles' => [
+                'yii\web\JqueryAsset' => [
+                    'sourcePath' => null,
+                    'js'         => [],
+                    'depends'    => [
+                        'backend\assets\AppAsset'
+                    ]
+                ],
+                'yii\bootstrap\BootstrapAsset'  => [
+                    'css'   => []
+                ],
+            ],
+        ],
     ],
     'params' => $params,
     'language'  => 'zh',
