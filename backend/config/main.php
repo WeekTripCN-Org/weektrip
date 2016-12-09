@@ -15,7 +15,11 @@ return [
     'defaultRoute' => 'index',
     'components' => [
         'request' => [
-            'csrfParam' => '_csrf-backend',
+            'class'     => 'common\core\Request',
+            // 'baseUrl'   => Yii::getAlias('@web'),
+        ],
+        'authManager' => [
+            'class' => 'common\core\rbac\DbManager'
         ],
         'user' => [
             'class' => 'yii\web\user',
@@ -37,7 +41,7 @@ return [
             ],
         ],
         'errorHandler' => [
-            'errorAction' => 'site/error',
+            //'errorAction' => 'site/error',
         ],
         /*
         'urlManager' => [
